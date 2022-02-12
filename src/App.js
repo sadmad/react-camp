@@ -1,6 +1,7 @@
 import ExpenseItemBox from "./components/Expences/ExpenseItemBox";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-function App() {
+const App = () => {
 
   const expenses = [
     {
@@ -25,8 +26,10 @@ function App() {
   ];
   return (
     <div>
-      <h2>Let's get started!</h2>
+      
+      <NewExpense />
       <ExpenseItemBox data={expenses}/>
+      
       <p>This is also show!</p>
     </div>
   );
