@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
-import './CourseGoalList.css';
+import './CourseGoalList.module.css';
 
 const CourseGoalList = props => {
   return (
