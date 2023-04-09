@@ -10,12 +10,14 @@ const FormControl = styled.div`
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
+    color: ${props => props.invalid? 'red' : "black"}
   }
 
   & input {
     display: block;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid ${props => props.invalid? 'red' : '#ccc'};
+    background: ${props => props.invalid? 'salmon': ""};
     font: inherit;
     line-height: 1.5rem;
     padding: 0 0.25rem;
@@ -25,17 +27,8 @@ const FormControl = styled.div`
     outline: none;
     background: #fad0ec;
     border-color: #8b005d;
-  }
+  }`;
 
-  &.invalid input {
-    border-color: red;
-    background-color: rgb(212, 153, 153);
-  }
-
-  &.invalid label {
-    color: red;
-  }
-`;
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isValid, setValid] = useState(true);
@@ -57,7 +50,7 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl invalid={false}>
+      <FormControl invalid={!isValid}>
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </FormControl>
