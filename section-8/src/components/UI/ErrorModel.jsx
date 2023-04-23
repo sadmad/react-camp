@@ -16,7 +16,7 @@ const ErrorModel = (props) => {
                 <p>{props.message}</p>
             </div>
             <footer className={classes.action}>
-                <Button onClick={props.closeError} >bashe</Button>
+                <Button onClick={props.closeError} >Ok</Button>
             </footer>
         </Card>
         </>

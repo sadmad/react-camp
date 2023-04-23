@@ -33,8 +33,7 @@ const AddUser = (props) => {
   };
   const errorHandler = () => {
     setError(null);
-
-}
+  };
 
   const usernameChangeHandler = (event) => {
     setEnteredUsername(event.target.value);
@@ -45,12 +44,14 @@ const AddUser = (props) => {
   };
   return (
     <>
-      {error &&  <ErrorModel
-          title="An error occured!"
-          message="Something went wrong!"
+      {error && (
+        <ErrorModel
+          title={error.title}
+          message={error.message}
           closeError={errorHandler}
         />
-      }
+        
+      )}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
